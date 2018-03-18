@@ -1,5 +1,4 @@
 main {
-
   #results {
     overflow: auto;
   }
@@ -26,6 +25,26 @@ main {
 
     .stats {
       float: left;
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    .agent {
+      .pi {
+        text-align: center;
+        float: none;
+        width: inherit;
+        padding-bottom: 20px;
+        padding-top: 10px;
+      }
+
+      .stats {
+        float: none;
+      }
     }
   }
 }

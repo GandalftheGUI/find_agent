@@ -1,4 +1,5 @@
-function getUserPhotoUrls(count) {
+function getUserPhotoUrls() {
+  var count = $( ".photo-holder > img" ).length;
   $.ajax({
     url: 'https://randomuser.me/api/',
     dataType: 'json',
@@ -22,5 +23,8 @@ function extractUrls(response_data) {
 }
 
 function addPhotoUrlsToPage(url_list) {
-  console.log(url_list);
+  var counter = 0;
+  $( ".photo-holder > img" ).each(function( index ) {
+    $(this).attr('src',url_list[counter++]);
+  });
 }

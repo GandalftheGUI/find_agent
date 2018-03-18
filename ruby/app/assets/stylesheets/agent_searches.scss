@@ -10,6 +10,15 @@ main {
     overflow: auto;
     padding: 10px;
 
+    .photo-holder {
+      display: block;
+      img {
+        border-radius: 100px;
+        height: 100px;
+        width: 100px;
+      }
+    }
+
     .pi {
       float: left;
       width: 150px;

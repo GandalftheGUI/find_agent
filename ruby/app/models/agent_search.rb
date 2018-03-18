@@ -1,5 +1,4 @@
 class AgentSearch < ApplicationRecord
-  serialize :price_ranges
   ###################################
   #
   #  Who: Full Stack Applicants, Backend Applicants, Data Applicants

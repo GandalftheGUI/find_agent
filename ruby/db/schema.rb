@@ -18,7 +18,12 @@ ActiveRecord::Schema.define(version: 20180318205735) do
     t.string "agent_ids", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "price_ranges", null: false
+    t.boolean "0to150k", default: false
+    t.boolean "150kto300k", default: false
+    t.boolean "300kto500k", default: false
+    t.boolean "500kto750k", default: false
+    t.boolean "750kto1m", default: false
+    t.boolean "1mplus", default: false
   end
 
   create_table "agent_stats", force: :cascade do |t|

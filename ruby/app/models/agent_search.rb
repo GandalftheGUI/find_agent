@@ -31,4 +31,11 @@ class AgentSearch < ApplicationRecord
     self.agent_ids = Agent.all.map(&:id)
   end
 
+  def price_ranges
+    [].tap do |ranges|
+      PRICE_RANGES.each do |range, desc|
+        ranges << range if self.send(range)
+      end
+    end
+  end
 end

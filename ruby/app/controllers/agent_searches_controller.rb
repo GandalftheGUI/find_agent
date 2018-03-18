@@ -6,9 +6,9 @@ class AgentSearchesController < ApplicationController
   end
 
   def create
-    search = AgentSearch.new(params.permit(:txn_side, :prop_type, :price_range))
-    
-    if search.txn_side.blank? || search.prop_type.blank? || search.price_range.blank?
+    search = AgentSearch.new(params.permit([:txn_side, :prop_type, AgentSearch::PRICE_RANGES.keys.map(&:to_sym)].flatten))
+
+    if search.txn_side.blank? || search.prop_type.blank? || search.price_ranges.none?
       redirect_to(root_path)
       return
     end

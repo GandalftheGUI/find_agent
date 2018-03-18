@@ -27,18 +27,10 @@
       </fieldset>
       <fieldset>
         <h3>What price range?</h3>
-        <%= radio_button_tag(:price_range, "0to150k") %>
-        <%= label_tag "$0 - $150k" %>
-        <%= radio_button_tag(:price_range, "150kto300k") %>
-        <%= label_tag "$150k - $300k" %>
-        <%= radio_button_tag(:price_range, "300kto500k") %>
-        <%= label_tag "$300k - $500k" %>
-        <%= radio_button_tag(:price_range, "500kto750k") %>
-        <%= label_tag "$500k - $750k" %>
-        <%= radio_button_tag(:price_range, "750kto1m") %>
-        <%= label_tag "$750k - $1m" %>
-        <%= radio_button_tag(:price_range, "1mplus") %>
-        <%= label_tag "$1m+" %>
+        <% AgentSearch::PRICE_RANGES.each do |range, desc| %>
+          <%= check_box_tag range %>
+          <%= label_tag desc %>
+        <% end %>
       </fieldset>
       <fieldset class="actions">
         <input type="submit" value="Search"/>

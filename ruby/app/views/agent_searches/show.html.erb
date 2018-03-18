@@ -11,7 +11,10 @@
   </header>
 
   <main>
-    <p> You searched for <%= @search.txn_side %> a <%= @search.prop_type %> at <%= @search.price_range.gsub("to", " to ").gsub("1mp", "1m p") %></p>
+    <p> 
+      You searched for <%= @search.txn_side %> a <%= @search.prop_type %> at
+      <%= @search.price_ranges.map{|range| range.gsub("to", " to ").gsub("1mp", "1m p")}.join(" or ") %>
+    </p>
     <%= render partial: "agent_list" %>
   </main>
 

@@ -1,5 +1,5 @@
 class AgentSearch < ApplicationRecord
-
+  serialize :price_ranges
   ###################################
   #
   #  Who: Full Stack Applicants, Backend Applicants, Data Applicants
@@ -19,6 +19,15 @@ class AgentSearch < ApplicationRecord
   #    - Agents who work at higher price points really don't like working at low price points
   #
   ###################################
+  PRICE_RANGES = {
+    "0to150k" => "$0 - $150k",
+    "150kto300k" => "$150k - $300k",
+    "300kto500k" => "$300k - $500k",
+    "500kto750k" => "$500k - $750k",
+    "750kto1m" => "$750k - $1m",
+    "1mplus" => "$1m+",
+  }
+
   def find_agent_matches!
     self.agent_ids = Agent.all.map(&:id)
   end

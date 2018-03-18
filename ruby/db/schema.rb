@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171017002548) do
+ActiveRecord::Schema.define(version: 20180318205735) do
 
   create_table "agent_searches", force: :cascade do |t|
     t.string "txn_side", null: false
     t.string "prop_type", null: false
-    t.string "price_range", null: false
     t.string "agent_ids", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "price_ranges", null: false
   end
 
   create_table "agent_stats", force: :cascade do |t|
